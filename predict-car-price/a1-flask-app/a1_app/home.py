@@ -26,6 +26,11 @@ def predict():
     power = request.form.get('power')
     seat = request.form.get('seat')
 
+    if mileage.strip() == '' and engine.strip() == '' and power.strip() == '' :
+        warning_message = '🚨 Hold up! 🚨 Looks like your form is dancing to the "Missing Values" beat! 🎶 Our prediction model is all about grooving with your data to serve up the freshest results. But uh-oh, it seems some values do not RSVP to the party! 😲 Do not worry, we have got your back – We will fill some of them for you! ⚡ Keep the data vibes flowing for the best prediction dance-off in town! 💃🕺'
+    else:
+        warning_message = '🎉 Hey there, trendsetter! 🌟 You have just taken the coolest ride on the prediction express! 🚀 Thanks for dropping by and letting our prediction model do its funky thing. 🕺💃'
+
     default_mileage = float(19.266374680306907)
     mileage = float(mileage) if mileage else default_mileage
     default_engine = float(1248.0)
@@ -53,7 +58,10 @@ def predict():
         'mileage':mileage,
         'engine':engine,
         'power':power,
-        'seat':seat
+        'seat':seat,
+        
+        #additional
+        'warning_message':warning_message
     }
 
 
