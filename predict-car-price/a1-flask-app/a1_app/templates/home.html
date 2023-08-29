@@ -2,25 +2,110 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Price Prediction</title>
+    <title>{{title}}</title>
     <style>
-        h1 {text-align: center;}
-        #footer {
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          text-align: center;
-          font-size: 12px;
-          color: gray;
-          padding: 10px;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-      </style>
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label, input, select {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1> {{content}}</h1>
+    <div class="container">
+        <h1>{{title}}</h1>
+        <p>
+            Hello! 🎉 Welcome to Chaky Car Company! 😄<br><br>
+            Buckle up, intrepid car enthusiasts and price-predicting pioneers, because you're about to embark on a wild ride through the zaniest zone in the automotive universe! 🌌✨ Here at Chaky Car Company, we don't just predict car company prices – we predict them with the flair of a disco-dancing robot unicorn on roller skates! 🕺🦄🛼 Just enter the details below and you will recieve the predicted price of the car. 
+        </p>
+        <form action="/predict" method="POST">
+            <label for="name">Model Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter the car model name eg:Toyota">
+
+            <label for="year">Year Manufactured:</label>
+            <input type="number" id="year" name="year" placeholder="Enter the year car was manufactured eg:2010">
+
+            <label for="km_driven">Kilometers Driven:</label>
+            <input type="number" id="km_driven" name="km_driven" placeholder="Enter kilometers driven eg:15000">
+
+            <label for="fuel">Fuel:</label>
+            <select id="fuel" name="fuel">
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+            </select>
+
+            <label for="seller_type">Seller Type:</label>
+            <select id="seller_type" name="seller_type">
+                <option value="individual">Individual</option>
+                <option value="dealer">Dealer</option>
+                <option value="t_dealer">Trustmark Dealer</option>
+            </select>
+
+            <label for="transmission">Transmission:</label>
+            <select id="transmission" name="transmission">
+                <option value="automatic">Automatic</option>
+                <option value="manual">Manual</option>
+            </select>
+
+            <label for="owner">Owner type:</label>
+            <select id="owner" name="owner">
+                <option value="owner1">First owner</option>
+                <option value="owner2">Second owner</option>
+                <option value="owner3">Third owner</option>
+                <option value="owner4">Fourth & above owner</option>
+            </select>
+            
+            <label for="mileage">Mileage (in kmpl):</label>
+            <input type="text" id="mileage" name="mileage" placeholder="Enter the mileage of car in kmpl  eg:30">
+
+            <label for="engine">Engine (in CC):</label>
+            <input type="text" id="engine" name="engine" placeholder="Enter the car's engine power in CC eg:1200">
+
+            <label for="power">Power of the car (in bhp):</label>
+            <input type="text" id="power" name="power" placeholder="Enter the car's power in bhp eg:102.9">
+
+            <label for="seat">Enter number of seats</label>
+            <input type="number" id="seat" name="seat" placeholder="Enter the number of seat the car has eg:5">
+
+
+            <!-- Add more form elements here -->
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
-<div id="footer"> Car Prediction ~ © Biraj Koirala </div>
 </html>
